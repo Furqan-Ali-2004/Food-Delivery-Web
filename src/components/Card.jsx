@@ -1,0 +1,35 @@
+import React from "react";
+import image1 from "../assets/image1.avif";
+
+import { LuLeafyGreen } from "react-icons/lu";
+import { GiChickenOven } from "react-icons/gi";
+
+function Card({ name, image, id, price, type }) {
+  return (
+    <div className="w-[300px] h-[400px] bg-zinc-800 p-[14px] rounded-3xl shadow-[-8px_-8px_15px_rgba(249,115,22,0.2),10px_10px_10px_rgba(0,0,0,0.3),inset_5px_5px_5px_rgba(0,0,0,0.4),inset_-5px_-5px_5px_rgba(249,115,22,0.2)] hover:scale-105 transition-all flex flex-col gap-3">
+      <div className="w-[100%] h-[60%] rounded-3xl overflow-hidden">
+        <img
+          src={image}
+          className="object-cover rounded-2xl shadow-lg-white/20"
+        />
+      </div>
+      <div className="text-lg font-semibold text-zinc-300 pt-2">{name}</div>
+
+      <div className="w[100%] flex items-center justify-between">
+        <div className="text-orange-500 font-bold text-md">{price}/-</div>
+        <div className="flex items-center gap-2 text-orange-500 font-semibold">
+          {type === "veg" ? <LuLeafyGreen /> : <GiChickenOven />}
+          <span>{type}</span>
+        </div>
+      </div>
+      <button className="relative w-full p-3 font-semibold border-2 border-orange-500 overflow-hidden group rounded-full cursor-pointer">
+        <span className="absolute inset-0 bg-orange-500 translate-x-[-100%] group-hover:translate-x-0 rounded-full transition-transform duration-400"></span>
+        <span className="relative z-10 text-orange-500 group-hover:text-white transition-colors duration-400">
+          Add to dish
+        </span>
+      </button>
+    </div>
+  );
+}
+
+export default Card;
