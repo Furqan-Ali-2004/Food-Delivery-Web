@@ -82,7 +82,7 @@ export const food_items = [
   {
     id: 7,
     food_name: "Paneer Butter Masala",
-    food_category: "main_course",
+    food_category: "course",
     food_type: "veg",
     food_quantity: 1,
     food_image: image7,
@@ -91,7 +91,7 @@ export const food_items = [
   {
     id: 8,
     food_name: "Chicken Biryani",
-    food_category: "main_course",
+    food_category: "course",
     food_type: "non_veg",
     food_quantity: 1,
     food_image: image8,
@@ -163,7 +163,7 @@ export const food_items = [
   {
     id: 16,
     food_name: "Chicken Tikka Masala",
-    food_category: "main_course",
+    food_category: "course",
     food_type: "non_veg",
     food_quantity: 1,
     food_image: image16,
@@ -199,7 +199,7 @@ export const food_items = [
   {
     id: 20,
     food_name: "Fish and Chips",
-    food_category: "main_course",
+    food_category: "course",
     food_type: "non_veg",
     food_quantity: 1,
     food_image: image20,
@@ -226,7 +226,7 @@ export const food_items = [
   {
     id: 23,
     food_name: "Egg Fried Rice",
-    food_category: "main_course",
+    food_category: "course",
     food_type: "non_veg",
     food_quantity: 1,
     food_image: image23,
