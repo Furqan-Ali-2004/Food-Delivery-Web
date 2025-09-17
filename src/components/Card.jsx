@@ -21,8 +21,8 @@ function Card({ name, image, id, price, type }) {
           <span>{type}</span>
         </div>
       </div>
-      <button className="relative w-full p-3 font-semibold border-2 border-orange-500 overflow-hidden group rounded-full cursor-pointer">
-        <span className="absolute inset-0 bg-orange-500 translate-x-[-100%] group-hover:translate-x-0 rounded-full transition-transform duration-400"></span>
+      <button className="relative w-full p-3 font-semibold border-2 border-orange-500 overflow-hidden group rounded-full cursor-pointer ounline-none">
+        <span className="absolute inset-0 bg-orange-500 translate-x-[-100%] group-hover:translate-x-0 rounded-full transition-transform duration-400 outline-none"></span>
         <span className="relative z-10 text-orange-500 group-hover:text-white transition-colors duration-400">
           Add to dish
         </span>

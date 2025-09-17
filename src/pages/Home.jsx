@@ -5,8 +5,11 @@ import Card from "../components/Card.jsx";
 import { food_items } from "../food.js";
 import { dataContext } from "../context/UserContext.jsx";
 
+import { ImCross } from "react-icons/im";
+import Card2 from "../components/Card2.jsx";
+
 function Home() {
-  let { cate, setCate, input } = useContext(dataContext);
+  let { cate, setCate, input, showCart, setShowCart } = useContext(dataContext);
 
   function filter(category) {
     if (category === "All") {
@@ -52,8 +55,23 @@ function Home() {
         ))}
       </div>
 
-      <div className="w-[40vw] h-[650px] fixed top-10 right-5 bg-white rounded-3xl">
-        <header></header>
+      <div
+        className={`w-[90vw] md:w-[40vw] h-[650px] fixed top-12 right-5 p-5 rounded-3xl z-10 bg-zinc/10 backdrop-blur-2xl shadow-[0px_0px_15px_rgba(249,115,22,0.3)] ${
+          showCart ? "translate-x-0" : "translate-x-[150%]"
+        } transition-all duration-500`}
+      >
+        <header className="w-full flex justify-between items-center ">
+          <span className="text-orange-500 text-[20px] font-semibold">
+            Order Items
+          </span>
+          <ImCross
+            className="text-orange-500 w-[20px] h-[20px] cursor-pointer hover:text-orange-900"
+            onClick={() => {
+              setShowCart(false);
+            }}
+          />
+        </header>
+        <Card2 />
       </div>
     </div>
   );

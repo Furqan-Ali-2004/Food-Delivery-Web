@@ -6,7 +6,8 @@ import { dataContext } from "../context/UserContext.jsx";
 import { food_items } from "../food.js";
 
 function Nav() {
-  let { input, setInput, cate, setCate } = useContext(dataContext);
+  let { input, setInput, cate, setCate, showCart, setShowCart } =
+    useContext(dataContext);
 
   useEffect(() => {
     let newList = food_items.filter((item) => {
@@ -33,7 +34,10 @@ function Nav() {
         />
       </form>
 
-      <div className="w-[60px] h-[60px] bg-zinc-800  flex items-center justify-center rounded-full shadow-orange-500/15 shadow-lg hover:shadow-orange-500/40 duration-150 cursor-pointer relative">
+      <div
+        className="w-[60px] h-[60px] bg-zinc-800  flex items-center justify-center rounded-full shadow-orange-500/15 shadow-lg hover:shadow-orange-500/40 duration-150 cursor-pointer relative"
+        onClick={() => setShowCart(true)}
+      >
         <span className="absolute top-0 right-2 text-orange-500 font-bold">
           0
         </span>
