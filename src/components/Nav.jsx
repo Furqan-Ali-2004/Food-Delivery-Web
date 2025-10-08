@@ -4,6 +4,7 @@ import { IoSearch } from "react-icons/io5";
 import { FaCartShopping } from "react-icons/fa6";
 import { dataContext } from "../context/UserContext.jsx";
 import { food_items } from "../food.js";
+import { useSelector } from "react-redux";
 
 function Nav() {
   let { input, setInput, cate, setCate, showCart, setShowCart } =
@@ -15,6 +16,9 @@ function Nav() {
     });
     setCate(newList);
   }, [input]);
+
+  let items = useSelector((state) => state.cart);
+  console.log(items);
   return (
     <div className="w-full h-[100px] flex justify-between items-center px-8">
       <div className="w-[60px] h-[60px] bg-zinc-800  flex items-center justify-center rounded-full shadow-orange-500/15 shadow-lg hover:shadow-orange-500/40 duration-200 cursor-pointer">
@@ -39,7 +43,7 @@ function Nav() {
         onClick={() => setShowCart(true)}
       >
         <span className="absolute top-0 right-2 text-orange-500 font-bold">
-          0
+          {items.length}
         </span>
         <FaCartShopping className="w-[28px] h-[28px] text-orange-500" />
       </div>

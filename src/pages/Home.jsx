@@ -7,6 +7,7 @@ import { dataContext } from "../context/UserContext.jsx";
 
 import { ImCross } from "react-icons/im";
 import Card2 from "../components/Card2.jsx";
+import { useSelector } from "react-redux";
 
 function Home() {
   let { cate, setCate, input, showCart, setShowCart } = useContext(dataContext);
@@ -21,6 +22,8 @@ function Home() {
       setCate(newList);
     }
   }
+
+  let items = useSelector((state) => state.cart);
 
   return (
     <div className="bg-zinc-900 min-h-screen">
@@ -71,7 +74,20 @@ function Home() {
             }}
           />
         </header>
-        <Card2 />
+
+        <div className="w-full mt-9 flex flex-col h-[550px] overflow-y-scroll pr-2 scrollbar-thin scrollbar-thumb-orange-500 scrollbar-track-zinc-800">
+          {items.map((item) => {
+            return (
+              <Card2
+                name={item.name}
+                price={item.price}
+                image={item.image}
+                id={item.id}
+                qty={item.qty}
+              />
+            );
+          })}
+        </div>
       </div>
     </div>
   );
