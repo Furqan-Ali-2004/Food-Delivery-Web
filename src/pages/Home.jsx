@@ -10,7 +10,6 @@ import NotFound from "../assets/not-found.png";
 import { ImCross } from "react-icons/im";
 import Card2 from "../components/Card2.jsx";
 import { useSelector } from "react-redux";
-import { fromJSON } from "postcss";
 import { toast } from "react-toastify";
 
 function Home() {
