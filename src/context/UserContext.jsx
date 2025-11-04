@@ -16,11 +16,7 @@ function UserContext({ children }) {
     setShowCart,
   };
 
-  return (
-    <div>
-      <dataContext.Provider value={data}>{children}</dataContext.Provider>
-    </div>
-  );
+  return <dataContext.Provider value={data}>{children}</dataContext.Provider>;
 }
 
 export default UserContext;

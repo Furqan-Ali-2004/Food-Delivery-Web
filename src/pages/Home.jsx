@@ -1,14 +1,14 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import Nav from "../components/Nav.jsx";
 import Categories from "../Category.jsx";
 import Card from "../components/Card.jsx";
-import { food_items } from "../food.js";
-import { dataContext } from "../context/UserContext.jsx";
+import Card2 from "../components/Card2.jsx";
 import EmptyCart from "../assets/empty-cart.png";
 import NotFound from "../assets/not-found.png";
 
 import { ImCross } from "react-icons/im";
-import Card2 from "../components/Card2.jsx";
+import { food_items } from "../food.js";
+import { dataContext } from "../context/UserContext.jsx";
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
 
@@ -103,6 +103,7 @@ function Home() {
               {items.map((item) => {
                 return (
                   <Card2
+                    key={item.id}
                     name={item.name}
                     price={item.price}
                     image={item.image}

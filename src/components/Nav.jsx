@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { MdFastfood } from "react-icons/md";
 import { IoSearch } from "react-icons/io5";
 import { FaCartShopping } from "react-icons/fa6";
@@ -18,7 +18,6 @@ function Nav() {
   }, [input]);
 
   let items = useSelector((state) => state.cart);
-  console.log(items);
   return (
     <div className="w-full h-[100px] flex justify-between items-center px-8">
       <div className="w-[60px] h-[60px] bg-zinc-800  flex items-center justify-center rounded-full shadow-orange-500/15 shadow-lg hover:shadow-orange-500/40 duration-200 cursor-pointer">

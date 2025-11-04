@@ -1,4 +1,3 @@
-import React from "react";
 import { MdDeleteForever } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import { RemoveItem, IncrementQty, DecrementQty } from "../redux/cartSlice";

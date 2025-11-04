@@ -1,5 +1,3 @@
-import React from "react";
-
 import { LuLeafyGreen } from "react-icons/lu";
 import { GiChickenOven } from "react-icons/gi";
 import { useDispatch } from "react-redux";
@@ -19,7 +17,7 @@ function Card({ name, image, id, price, type }) {
       </div>
       <div className="text-lg font-semibold text-zinc-300 pt-2">{name}</div>
 
-      <div className="w[100%] flex items-center justify-between">
+      <div className="w-[100%] flex items-center justify-between">
         <div className="text-orange-500 font-bold text-md">{price}/-</div>
         <div className="flex items-center gap-2 text-orange-500 font-semibold">
           {type === "veg" ? <LuLeafyGreen /> : <GiChickenOven />}
@@ -27,11 +25,12 @@ function Card({ name, image, id, price, type }) {
         </div>
       </div>
       <button
-        className="relative w-full p-3 font-semibold border-2 border-orange-500 overflow-hidden group rounded-full cursor-pointer ounline-none"
+        className="relative w-full p-3 font-semibold border-2 border-orange-500 overflow-hidden group rounded-full cursor-pointer outline-none"
         onClick={() => {
-          dispatch(
-            AddItem({ id: id, name: name, price: price, image: image, qty: 1 })
-          );
+          const payload = { id, name, price, image, qty: 1 };
+          console.log("Dispatching AddItem payload:", payload);
+          dispatch(AddItem(payload));
+
           toast.success("Dish added to cart successfully!");
         }}
       >
